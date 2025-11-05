@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+
+body {
+  background: url('https://images.pexels.com/photos/7303169/pexels-photo-7303169.jpg?auto=compress&cs=tinysrgb&h=1080') no-repeat center center fixed;
+  background-size: cover;
+  color: #0B2545;
+}
+
+body::before {
+  content:"";
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(255,255,255,0.85);
+  z-index:-1;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+.logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+.hero h1 { font-size:1.8rem; color:#0B2545; margin-bottom:10px; }
+.hero p { font-size:1rem; color:#F4B6C2; }
+
+/* Gallery */
+.gallery { overflow-x: scroll; display: flex; scroll-snap-type: x mandatory; padding-bottom: 20px; }
+.gallery .slider { display:flex; gap:10px; }
+.gallery .slide { flex:0 0 80%; scroll-snap-align: center; border-radius:12px; overflow:hidden; position:relative; }
+.gallery img { width:100%; height:auto; border-radius:12px; transition: transform 0.3s, box-shadow 0.3s; }
+.gallery img:hover { transform: scale(1.05); box-shadow:0 4px 15px rgba(0,0,0,0.25); }
+
+/* Description Box */
+.description-box {
+  text-align:center;
+  background: #0B2545;
+  color:white;
+  padding:15px 20px;
+  margin:10px 20px;
+  border-radius:10px;
+  display:none;
+  font-size:0.9rem;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Testimonials */
+.testimonials { text-align:center; padding:20px; background: rgba(244,182,194,0.2); border-radius:12px; margin:10px 20px; }
+.testimonial { display:none; font-style:italic; color:#0B2545; }
+.testimonial.active { display:block; }
+
+/* Buttons */
+.contact { text-align:center; padding:20px; display:flex; flex-direction:column; gap:12px; margin-bottom:40px; }
+.btn {
+  text-decoration:none;
+  color:white;
+  padding:14px 20px;
+  border-radius:10px;
+  font-weight:600;
+  transition:0.3s;
+}
+.btn.whatsapp { background:#25D366; }
+.btn.call { background:#0B2545; }
+.btn.location { background:#F4B6C2; color:#0B2545; }
+
+.btn:hover { opacity:0.85; transform: scale(1.02); }
+
+/* Mobile-friendly */
+@media (max-width: 600px) {
+  .hero h1 { font-size:1.4rem; }
+  .gallery .slide { flex:0 0 90%; }
+  .btn { font-size:1rem; padding:12px; }
+}
